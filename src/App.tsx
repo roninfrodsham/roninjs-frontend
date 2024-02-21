@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Navigation } from "./Components/Navigation";
+import { Navigation } from "./components";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import "./App.css";
 
