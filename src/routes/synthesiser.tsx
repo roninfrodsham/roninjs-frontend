@@ -1,9 +1,8 @@
+import { PageLayout } from "../components/PageLayout";
+import { Synth } from "../components";
+
 function Synthesiser() {
-  return (
-    <div>
-      <h1>Synthesiser</h1>
-    </div>
-  );
+  return <PageLayout Component={Synth} />;
 }
 
 export { Synthesiser };

@@ -19,9 +19,7 @@ function App() {
   return (
     <div className='flex flex-col lg:flex-row h-screen'>
       <Header navOpen={navOpen} toggleNav={toggleNav} year={year} />
-      <div className='grow flex justify-center items-center'>
-        <Outlet />
-      </div>
+      <Outlet />
     </div>
   );
 }
