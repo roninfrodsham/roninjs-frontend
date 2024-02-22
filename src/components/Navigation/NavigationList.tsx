@@ -1,57 +1,53 @@
 import { motion } from "framer-motion";
+import { Link, useLocation } from "react-router-dom";
+import { NavigationItems } from "../../types";
 
-type NavigationItems = {
-  id: string;
-  title: string;
-  path: string;
-}[];
-
-function NavigationList({
-  navigationItems,
-  ariaLabel,
-  classes,
-}: {
+type NavigationListProps = {
   navigationItems: NavigationItems;
   ariaLabel: string;
   classes: string;
-}) {
-  const navItemVariants = {
-    visible: { opacity: 1, x: 0 },
-    hidden: { opacity: 0, x: -100 },
-  };
+};
 
-  const transition = {
-    duration: 0.5,
-    staggerChildren: 0.1,
+const commonStyles = {
+  backgroundColor: "#eeabce",
+  color: "#00582b",
+  scale: 1.1,
+  width: "100%",
+};
+
+const whileHover = {
+  ...commonStyles,
+  transition: {
+    duration: 0.01,
     type: "spring",
-    stiffness: 130,
-    damping: 15,
-  };
+    stiffness: 300,
+    damping: 30,
+  },
+};
 
-  const whileHover = {
-    width: "100%",
-    backgroundColor: "#eeabce",
-    color: "#00582b",
-    transition: {
-      duration: 0.01,
-      type: "spring",
-      stiffness: 300,
-      damping: 30,
-    },
-  };
+const MotionComponent = motion(Link);
+
+function NavigationList({ navigationItems, ariaLabel, classes }: NavigationListProps) {
+  const location = useLocation().pathname;
 
   return (
     <nav className={classes} aria-label={ariaLabel}>
-      <motion.ul initial='hidden' animate='visible' transition={transition} className='text-2xl'>
+      <motion.ul className='text-2xl'>
         {navigationItems.map((item) => (
-          <motion.li key={item.id} className='mt-3' variants={navItemVariants}>
-            <motion.a
-              href={item.path}
-              className='py-2 inline-block bg-ronin-green text-ronin-pink'
+          <motion.li key={item.id} className='mt-3'>
+            <MotionComponent
+              to={item.path}
+              className='pt-3 pb-2 inline-block bg-ronin-green-900 text-ronin-pink'
+              initial={{ originX: 0 }}
+              animate={
+                location === item.path
+                  ? commonStyles
+                  : { backgroundColor: "#00582b", color: "#eeabce", scale: 1, width: "auto" }
+              }
               whileHover={whileHover}
             >
               <span className='px-6'>{item.title}</span>
-            </motion.a>
+            </MotionComponent>
           </motion.li>
         ))}
       </motion.ul>
