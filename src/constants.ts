@@ -9,17 +9,17 @@ export const PRIMARY_NAV_ITEMS: NavigationItems = [
   {
     id: "nav-item-2",
     title: "Simon Memory Game",
-    path: "/",
+    path: "/simon",
   },
   {
     id: "nav-item-3",
     title: "Chess",
-    path: "/",
+    path: "/chess",
   },
   {
     id: "nav-item-4",
     title: "Kabuto Masks",
-    path: "/",
+    path: "/kabuto",
   },
 ];
 
@@ -27,6 +27,6 @@ export const SECONDARY_NAV_ITEMS: NavigationItems = [
   {
     id: "sec-nav-item-1",
     title: "Information",
-    path: "/",
+    path: "/info",
   },
 ];

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { NavigationItems } from "../../types";
 
 type NavigationListProps = {
@@ -8,11 +8,15 @@ type NavigationListProps = {
   classes: string;
 };
 
-const whileHover = {
-  width: "100%",
+const commonStyles = {
   backgroundColor: "#eeabce",
-  scale: 1.1,
   color: "#00582b",
+  scale: 1.1,
+  width: "100%",
+};
+
+const whileHover = {
+  ...commonStyles,
   transition: {
     duration: 0.01,
     type: "spring",
@@ -24,6 +28,8 @@ const whileHover = {
 const MotionComponent = motion(Link);
 
 function NavigationList({ navigationItems, ariaLabel, classes }: NavigationListProps) {
+  const location = useLocation().pathname;
+
   return (
     <nav className={classes} aria-label={ariaLabel}>
       <motion.ul className='text-2xl'>
@@ -32,6 +38,12 @@ function NavigationList({ navigationItems, ariaLabel, classes }: NavigationListP
             <MotionComponent
               to={item.path}
               className='pt-3 pb-2 inline-block bg-ronin-green-900 text-ronin-pink'
+              initial={{ originX: 0 }}
+              animate={
+                location === item.path
+                  ? commonStyles
+                  : { backgroundColor: "#00582b", color: "#eeabce", scale: 1, width: "auto" }
+              }
               whileHover={whileHover}
             >
               <span className='px-6'>{item.title}</span>
