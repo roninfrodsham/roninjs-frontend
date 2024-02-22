@@ -1,57 +1,41 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+import { NavigationItems } from "../../types";
 
-type NavigationItems = {
-  id: string;
-  title: string;
-  path: string;
-}[];
-
-function NavigationList({
-  navigationItems,
-  ariaLabel,
-  classes,
-}: {
+type NavigationListProps = {
   navigationItems: NavigationItems;
   ariaLabel: string;
   classes: string;
-}) {
-  const navItemVariants = {
-    visible: { opacity: 1, x: 0 },
-    hidden: { opacity: 0, x: -100 },
-  };
+};
 
-  const transition = {
-    duration: 0.5,
-    staggerChildren: 0.1,
+const whileHover = {
+  width: "100%",
+  backgroundColor: "#eeabce",
+  scale: 1.1,
+  color: "#00582b",
+  transition: {
+    duration: 0.01,
     type: "spring",
-    stiffness: 130,
-    damping: 15,
-  };
+    stiffness: 300,
+    damping: 30,
+  },
+};
 
-  const whileHover = {
-    width: "100%",
-    backgroundColor: "#eeabce",
-    color: "#00582b",
-    transition: {
-      duration: 0.01,
-      type: "spring",
-      stiffness: 300,
-      damping: 30,
-    },
-  };
+const MotionComponent = motion(Link);
 
+function NavigationList({ navigationItems, ariaLabel, classes }: NavigationListProps) {
   return (
     <nav className={classes} aria-label={ariaLabel}>
-      <motion.ul initial='hidden' animate='visible' transition={transition} className='text-2xl'>
+      <motion.ul className='text-2xl'>
         {navigationItems.map((item) => (
-          <motion.li key={item.id} className='mt-3' variants={navItemVariants}>
-            <motion.a
-              href={item.path}
-              className='py-2 inline-block bg-ronin-green text-ronin-pink'
+          <motion.li key={item.id} className='mt-3'>
+            <MotionComponent
+              to={item.path}
+              className='pt-3 pb-2 inline-block bg-ronin-green-900 text-ronin-pink'
               whileHover={whileHover}
             >
               <span className='px-6'>{item.title}</span>
-            </motion.a>
+            </MotionComponent>
           </motion.li>
         ))}
       </motion.ul>

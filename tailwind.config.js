@@ -4,7 +4,9 @@ export default {
   theme: {
     colors: {
       "ronin-pink": "#eeabce",
-      "ronin-green": "#00582b",
+      "ronin-green-900": "#00582b",
+      "ronin-green-600": "#09743E",
+      "ronin-green-300": "#168F52",
     },
     extend: {},
   },
