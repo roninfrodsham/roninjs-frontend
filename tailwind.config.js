@@ -8,7 +8,11 @@ export default {
       "ronin-green-600": "#09743E",
       "ronin-green-300": "#168F52",
     },
-    extend: {},
+    extend: {
+      fontFamily: {
+        montserrat: ["Montserrat", "sans-serif"],
+      },
+    },
   },
   plugins: [],
 };

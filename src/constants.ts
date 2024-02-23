@@ -26,7 +26,7 @@ export const PRIMARY_NAV_ITEMS: NavigationItems = [
 export const SECONDARY_NAV_ITEMS: NavigationItems = [
   {
     id: "sec-nav-item-1",
-    title: "Information",
-    path: "/info",
+    title: "Contact",
+    path: "/contact",
   },
 ];
