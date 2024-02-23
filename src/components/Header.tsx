@@ -25,7 +25,7 @@ function Header({ navOpen, toggleNav, year }: HeaderProps) {
           </button>
         </div>
         <Navigation />
-        <p className='p-6 text-ronin-pink font-montserrat text-sm'>Copyright {year} RoninJS Ltd.</p>
+        <p className='p-6 text-ronin-pink font-roboto text-sm'>Copyright {year} RoninJS Ltd.</p>
       </div>
       <div className='lg:hidden p-6 pt-8 flex flex-row items-center bg-ronin-green-900'>
         <Link to='/' className='grow text-5xl text-ronin-pink'>
