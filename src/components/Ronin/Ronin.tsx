@@ -11,7 +11,7 @@ const hatVariants = {
     opacity: 1,
     y: 0,
     transition: {
-      delay: 1,
+      delay: 0.5,
       duration: 0.5,
       type: "tween",
       ease: "easeInOut",

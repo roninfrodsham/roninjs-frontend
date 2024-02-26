@@ -1,4 +1,4 @@
-import { NavigationList } from "./NavigationList";
+import { NavigationList } from "./components/NavigationList";
 import { PRIMARY_NAV_ITEMS, SECONDARY_NAV_ITEMS } from "../../constants";
 
 function Navigation() {

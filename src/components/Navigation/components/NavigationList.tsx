@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
-import { NavigationItems } from "../../types";
+import { NavigationItems } from "../../../types";
 
 type NavigationListProps = {
   navigationItems: NavigationItems;
@@ -32,7 +32,7 @@ function NavigationList({ navigationItems, ariaLabel, classes }: NavigationListP
 
   return (
     <nav className={classes} aria-label={ariaLabel}>
-      <motion.ul className='text-2xl'>
+      <motion.ul className='text-2xl font-bebas'>
         {navigationItems.map((item) => (
           <motion.li key={item.id} className='mt-3'>
             <MotionComponent
