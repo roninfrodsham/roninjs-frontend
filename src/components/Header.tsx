@@ -10,7 +10,7 @@ type HeaderProps = {
 
 function Header({ navOpen, toggleNav, year }: HeaderProps) {
   return (
-    <header>
+    <header className='relative z-10'>
       <div
         className={`${
           navOpen ? "flex flex-col" : "hidden"
