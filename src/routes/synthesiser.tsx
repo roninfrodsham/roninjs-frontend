@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { useDocumentTitle } from "usehooks-ts";
 import { PageLayout } from "../components/PageLayout";
 import { Synth } from "../components";
 import { InfoBox } from "../components";
@@ -7,12 +8,12 @@ import { InfoBoxHeader } from "../components/Infobox/components/InfoBoxHeader";
 
 const whileHover = {
   backgroundColor: "#eeabce",
-  scale: 1.2,
+  scale: 1.1,
   transition: {
     duration: 0.01,
     type: "spring",
     stiffness: 300,
-    damping: 30,
+    damping: 20,
   },
 };
 
@@ -56,6 +57,7 @@ function Info({ isOpen, setIsOpen }: { isOpen: boolean; setIsOpen: React.Dispatc
         <motion.a
           href='https://github.com/users/roninfrodsham/projects/5'
           className='flex-auto pt-3 pb-2 bg-ronin-green-300 text-ronin-green-900 font-bebas text-xl text-center'
+          whileHover={whileHover}
         >
           Github Project
         </motion.a>
@@ -67,6 +69,8 @@ function Info({ isOpen, setIsOpen }: { isOpen: boolean; setIsOpen: React.Dispatc
 const classes = "w-11/12";
 
 function Synthesiser() {
+  useDocumentTitle("Synthesiser built in React and TypeScript using Web Audio API - RoninJS");
+
   const [isOpen, setIsOpen] = useState(false);
 
   return (
