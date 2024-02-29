@@ -5,10 +5,11 @@ type PageLayoutProps = {
   slideBtnText: string;
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
   isOpen: boolean;
+  classes: string;
   children: React.ReactNode;
 };
 
-function PageLayout({ Component, slideBtnText, setIsOpen, isOpen, children }: PageLayoutProps) {
+function PageLayout({ Component, slideBtnText, setIsOpen, isOpen, classes, children }: PageLayoutProps) {
   return (
     <div className='grow flex justify-center items-center'>
       <motion.button
@@ -20,7 +21,7 @@ function PageLayout({ Component, slideBtnText, setIsOpen, isOpen, children }: Pa
       >
         {slideBtnText}
       </motion.button>
-      <div className='w-3/4 sm:w-1/2 xl:w-1/3 2xl:w-1/4'>
+      <div className={classes}>
         <Component />
         {children}
       </div>

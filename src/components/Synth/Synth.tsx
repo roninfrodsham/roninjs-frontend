@@ -35,7 +35,7 @@ function Synth() {
 
   // Render the Controls and Keyboard components
   return (
-    <div className='h-screen flex items-center justify-center p-10'>
+    <div className='flex items-center justify-center p-10'>
       <div className='synth relative w-full shadow-lg'>
         <Controls naturalNoteWidth={naturalNoteWidth} power={power} setPower={setPower} />
         <Keyboard naturalNotes={allNaturalNotes} whiteKeyWidth={naturalNoteWidth} naturalNoteWidth={naturalNoteWidth} />

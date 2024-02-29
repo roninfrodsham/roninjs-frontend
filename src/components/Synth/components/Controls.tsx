@@ -14,24 +14,24 @@ function Controls({ naturalNoteWidth, power, setPower }: ControlsProps) {
   return (
     <>
       <p
-        className='logo text-2xl sm:text-4xl md:text-5xl absolute antialiased subpixel-antialiased tracking-wide text-shadow font-bebas'
+        className='logo text-2xl sm:text-3xl md:text-4xl absolute antialiased subpixel-antialiased tracking-wide text-shadow font-bebas'
         style={{ left: `${naturalNoteWidth}%` }}
       >
         R 106
       </p>
       <p
-        className='logo text-2xl sm:text-4xl md:text-5xl absolute antialiased tracking-wide shine font-bebas'
+        className='logo text-2xl sm:text-3xl md:text-4xl absolute antialiased tracking-wide shine font-bebas'
         style={{ left: `${naturalNoteWidth}%` }}
       >
         R 106
       </p>
       <button
-        className='power absolute flex items-center gap-x-3 rounded-md px-3 py-1 text-sm cursor-pointer md:gap-x-4 md:px-5 md:text-xl'
+        className='power absolute flex items-center gap-x-3 rounded-md px-3 py-1 text-sm cursor-pointer md:gap-x-4 md:px-5 md:text-lg font-bebas'
         style={{ right: `${naturalNoteWidth}%` }}
         onClick={handleClick}
       >
         Power
-        <span className={`power-light rounded-full font-bebas ${power && "power-light-on"}`}></span>
+        <span className={`power-light rounded-full ${power && "power-light-on"}`}></span>
       </button>
     </>
   );
