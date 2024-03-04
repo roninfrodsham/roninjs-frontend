@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App.tsx";
-import { Home, Synthesiser } from "./routes";
+import { Home, Synthesiser, SimonMemoryGame } from "./routes";
 import "./index.css";
 
 const router = createBrowserRouter([
@@ -12,6 +12,7 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <Home /> },
       { path: "/synthesiser", element: <Synthesiser /> },
+      { path: "/simon", element: <SimonMemoryGame /> },
     ],
   },
 ]);
