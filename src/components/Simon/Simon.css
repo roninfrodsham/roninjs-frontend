@@ -158,13 +158,10 @@
   height: 100%;
   flex-direction: column;
 }
-.logo {
+.simon-logo {
   position: relative;
   width: 84%;
   padding: 1%;
-  /* added for ronin site to fix layout */
-  margin-top: -12%;
-  margin-bottom: 10%;
 }
 .controls {
   width: 100%;
@@ -190,7 +187,7 @@ input {
   border: 0;
   background-color: transparent;
   text-align: center;
-  font-family: "Roboto Condensed", sans-serif !important;
+  font-family: "Orbitron" !important;
   font-size: 21px !important;
   width: 100%;
   color: #02a46b !important;

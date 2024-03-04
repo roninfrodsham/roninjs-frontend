@@ -123,7 +123,7 @@ function Simon() {
           </div>
           <div className='controlsContainer pa circle oh'>
             <div className='controlsInner cc'>
-              <img src={logo} className='logo bGray' alt='Simon Logo' />
+              <img src={logo} className='simon-logo bGray' alt='Simon Logo' />
               <div className='controls cc'>
                 <div className='screenShadow cc'>
                   <div className='screen cc'>
