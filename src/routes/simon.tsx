@@ -47,7 +47,7 @@ function Info({ isOpen, setIsOpen }: { isOpen: boolean; setIsOpen: React.Dispatc
   );
 }
 
-const classes = "w-11/12";
+const classes = "flex jusitfy-center";
 
 function SimonMemoryGame() {
   useDocumentTitle("Synthesiser built in React and TypeScript using Web Audio API - RoninJS");
